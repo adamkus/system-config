@@ -3,6 +3,11 @@ set $tag2 "2: browser"
 set $tag3 "3: TD"
 set $tag4 "4: music"
 set $tag5 "5: skype"
+set $tag6 "6: utils"
+set $tag7 "7"
+set $tag8 "8"
+set $tag9 "9"
+set $tag10 "10"
 
 exec /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
@@ -24,7 +29,7 @@ bindsym $mod+t exec timedoctorpro
 
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn "Droid Sans Mono-8"
 
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -41,10 +46,14 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindsym $mod+Shift+Left exec playerctl previous
+bindsym $mod+Shift+Down exec playerctl play-pause
+bindsym $mod+Shift+Up exec playerctl play-pause
+bindsym $mod+Shift+Right exec playerctl next
 
 bindsym $mod+h split h
 bindsym $mod+v split v
@@ -65,22 +74,40 @@ bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
 bindsym $mod+5 workspace $tag5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+6 workspace $tag6
+bindsym $mod+7 workspace $tag7
+bindsym $mod+8 workspace $tag8
+bindsym $mod+9 workspace $tag9
+bindsym $mod+0 workspace $tag10
 
 bindsym $mod+Shift+1 move container to workspace $tag1
 bindsym $mod+Shift+2 move container to workspace $tag2
 bindsym $mod+Shift+3 move container to workspace $tag3
 bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace $tag5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+6 move container to workspace $tag6
+bindsym $mod+Shift+7 move container to workspace $tag7
+bindsym $mod+Shift+8 move container to workspace $tag8
+bindsym $mod+Shift+9 move container to workspace $tag9
+bindsym $mod+Shift+0 move container to workspace $tag10
+
+workspace $tag1 output eDP1
+workspace $tag3 output eDP1
+workspace $tag5 output eDP1
+workspace $tag7 output eDP1
+workspace $tag9 output eDP1
+
+workspace $tag2 output VGA1
+workspace $tag4 output VGA1
+workspace $tag6 output VGA1
+workspace $tag8 output VGA1
+workspace $tag10 output VGA1
+
+assign [class="google-chrome"] $tag2
+assign [class="phpstorm"] $tag1
+assign [class="timedoctorpro"] $tag3
+assign [class="Spotify"] $tag4
+assign [class="Skype"] $tag5
 
 bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
 bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
