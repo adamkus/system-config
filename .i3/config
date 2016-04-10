@@ -13,7 +13,7 @@ exec /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 
 exec feh --no-startup-id --bg-scale /home/akus/Pictures/wallpaper
-exec xrandr --output VGA1 --auto --left-of eDP1
+exec xrandr --output VGA1 --auto --right-of eDP1
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 focus_follows_mouse no
@@ -26,6 +26,11 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+b exec optirun google-chrome-stable
 bindsym $mod+p exec phpstorm
 bindsym $mod+t exec timedoctorpro
+bindsym $mod+m exec spotify --force-device-scale-factor=1.0000001
+bindsym $mod+n exec nautilus
+bindsym $mod+Shift+m exec xrandr --output VGA1 --auto --right-of eDP1
+bindsym $mod+Shift+Ctrl+m exec xrandr --output VGA1 --mode 1920x1080
+bindsym $mod+Shift+w exec work
 
 bindsym $mod+Shift+q kill
 
@@ -129,7 +134,7 @@ new_window 1pixel
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Shift+e exec halt --poweroff
 
 mode "resize" {
         bindsym j resize shrink width 20 px or 20 ppt
@@ -165,3 +170,5 @@ colors {
     }
 }
 
+exec xset s off
+exec xset -dpms

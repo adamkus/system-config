@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd /projects/TDv2
+exec vagrant up &
+exec timedoctorpro &
+exec phpstorm &
+exec google-chrome-stable staffdotcom.slack.com &
+exec google-chrome-stable codeship.com &
+exec google-chrome-stable globalworkforce.jira.com &
