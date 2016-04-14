@@ -124,7 +124,7 @@ bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym $mod+Control+b exec i3lock -i /home/akus/Pictures/lock -t -u
 exec xautolock -time 3 -locker i3lock -i /home/akus/Pictures/lock -t -u
 
-client.focused #d64937 #d64937 #dedede
+client.focused #e06d34 #e06d34 #2f0f26
 client.unfocused #333333 #333333 #dedede
 client.focused_inactive #333333 #333333 #dedede
 client.urgent #383a3b #383a3b #ee0000
@@ -160,12 +160,12 @@ bar {
 	font pango:Droid Sans 8
 colors {
         background #2d2d2d
-        statusline #dedede
+        statusline #e06d34
         separator #2d2d2d
 
-        focused_workspace  #d64937 #d64937 #dedede
-        active_workspace   #2d2d2d #5f676a #dedede
-        inactive_workspace #2d2d2d #2d2d2d #888888
+        focused_workspace  #e06d34 #e06d34 #2f0f26
+        active_workspace   #892e33 #892e33 #2f0f26
+        inactive_workspace #2d2d2d #2d2d2d #ad4333
         urgent_workspace   #333333 #900000 #ffffff
     }
 }
