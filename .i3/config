@@ -165,7 +165,7 @@ colors {
 
         focused_workspace  #e06d34 #e06d34 #2f0f26
         active_workspace   #892e33 #892e33 #2f0f26
-        inactive_workspace #2d2d2d #2d2d2d #ad4333
+        inactive_workspace #2d2d2d #2d2d2d #e06d34
         urgent_workspace   #333333 #900000 #ffffff
     }
 }
