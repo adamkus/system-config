@@ -15,6 +15,7 @@ exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec feh --no-startup-id --bg-scale /home/akus/Pictures/wallpaper
 exec xrandr --output VGA1 --auto --right-of eDP1
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec nm-applet
 
 focus_follows_mouse no
 
@@ -165,7 +166,7 @@ colors {
         separator #2d2d2d
 
         focused_workspace  #e06d34 #e06d34 #2f0f26
-        active_workspace   #892e33 #892e33 #2f0f26
+        active_workspace   #f43c45 #f43c45 #2f0f26
         inactive_workspace #2d2d2d #2d2d2d #e06d34
         urgent_workspace   #333333 #900000 #ffffff
     }
